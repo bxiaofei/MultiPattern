@@ -2,11 +2,13 @@
 //  ViewController.swift
 //  MultiPattern
 //
-//  Created by 李松 on 2018/12/20.
+//  Created by Bao on 2018/12/20.
 //  Copyright © 2018 Chris. All rights reserved.
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class MultiViewController: UIViewController {
     
@@ -23,7 +25,13 @@ class MultiViewController: UIViewController {
     var minimalObserver: NSObjectProtocol?
 
     @IBOutlet weak var mvvmTextField: UITextField!
+    var mvvmViewModel: ViewModel?
+    var mvvmObserver: Disposable?
     
+    @IBOutlet weak var mvcvsTextField: UITextField!
+    var viewStateObserver: NSObjectProtocol?
+    var viewState: ViewState?
+    var viewStateModelObserver: NSObjectProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +39,8 @@ class MultiViewController: UIViewController {
         mvcDidLoad()
         mvpDidLoad()
         minimalDidLoad()
+        mvvmDidLoad()
+        mvcsDidLoad()
     }
 }
 
@@ -121,8 +131,55 @@ extension MultiViewController {
     }
 }
 
+class ViewModel {
+    var model: Model
+    init(model: Model) {
+        self.model = model
+    }
+    
+    var textFieldValue = NotificationCenter.default
+    .rx.notification(Model.textDidChange, object: nil)
+    .map({ (n) -> String in
+        n.userInfo?[Model.textKey] as? String ?? ""
+    })
+    .share(replay: 1, scope: .whileConnected)
+    
+    func mvvmCommit(value: String) {
+        model.value = value
+    }
+}
+
 extension MultiViewController {
+    func mvvmDidLoad() {
+        mvvmViewModel = ViewModel(model: model)
+        mvvmObserver = mvvmViewModel!.textFieldValue
+        .bind(to: self.mvvmTextField.rx.text)
+    }
     @IBAction func mvvmCommit(_ sender: Any) {
-        
+        mvvmViewModel?.mvvmCommit(value: self.mvvmTextField.text ?? "")
+    }
+}
+
+class ViewState {
+    var textFieldValue: String
+    
+    init(textFieldValue: String) {
+        self.textFieldValue = textFieldValue
+    }
+}
+
+extension MultiViewController {
+    func mvcsDidLoad() {
+        viewState = ViewState(textFieldValue: model.value ?? "")
+        mvcvsTextField.text = model.value
+        viewStateObserver = NotificationCenter.default.addObserver(forName: UITextField.textDidChangeNotification, object: mvcvsTextField, queue: nil, using: { [weak self] (n) in
+            self?.viewState?.textFieldValue = (n.object as! UITextField).text ?? ""
+        })
+        viewStateModelObserver = NotificationCenter.default.addObserver(forName: Model.textDidChange, object: nil, queue: nil) { [weak self] (n) in
+            self?.mvcvsTextField.text = n.userInfo?[Model.textKey] as? String ?? ""
+        }
+    }
+    @IBAction func mvcsCommit(_ sender: Any) {
+        model.value = viewState?.textFieldValue
     }
 }

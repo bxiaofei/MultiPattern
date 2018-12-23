@@ -14,6 +14,7 @@
 		2EBE5FE621CB3D3800EF9107 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EBE5FE421CB3D3800EF9107 /* LaunchScreen.storyboard */; };
 		2EBE5FF121CB3D3800EF9107 /* MultiPatternTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBE5FF021CB3D3800EF9107 /* MultiPatternTests.swift */; };
 		2EBE5FFC21CB3EDB00EF9107 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBE5FFB21CB3EDB00EF9107 /* Model.swift */; };
+		A278A7406EC6A7E744243D17 /* Pods_MultiPattern.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BAFBEEA64A7796D8C8C3919 /* Pods_MultiPattern.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0BAFBEEA64A7796D8C8C3919 /* Pods_MultiPattern.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MultiPattern.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EBE5FD821CB3D3500EF9107 /* MultiPattern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiPattern.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EBE5FDB21CB3D3500EF9107 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2EBE5FDD21CB3D3500EF9107 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +40,8 @@
 		2EBE5FF021CB3D3800EF9107 /* MultiPatternTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPatternTests.swift; sourceTree = "<group>"; };
 		2EBE5FF221CB3D3800EF9107 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2EBE5FFB21CB3EDB00EF9107 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		3939877620191ADBAD79C4D0 /* Pods-MultiPattern.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultiPattern.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MultiPattern/Pods-MultiPattern.debug.xcconfig"; sourceTree = "<group>"; };
+		73346D531F98196B52773E7A /* Pods-MultiPattern.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultiPattern.release.xcconfig"; path = "Pods/Target Support Files/Pods-MultiPattern/Pods-MultiPattern.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A278A7406EC6A7E744243D17 /* Pods_MultiPattern.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,12 +63,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0EA71F190ADEC2115C64ED13 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3939877620191ADBAD79C4D0 /* Pods-MultiPattern.debug.xcconfig */,
+				73346D531F98196B52773E7A /* Pods-MultiPattern.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		2EBE5FCF21CB3D3500EF9107 = {
 			isa = PBXGroup;
 			children = (
 				2EBE5FDA21CB3D3500EF9107 /* MultiPattern */,
 				2EBE5FEF21CB3D3800EF9107 /* MultiPatternTests */,
 				2EBE5FD921CB3D3500EF9107 /* Products */,
+				0EA71F190ADEC2115C64ED13 /* Pods */,
+				5CAD4509D1B9CB75C1223D72 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +115,14 @@
 			path = MultiPatternTests;
 			sourceTree = "<group>";
 		};
+		5CAD4509D1B9CB75C1223D72 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0BAFBEEA64A7796D8C8C3919 /* Pods_MultiPattern.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +130,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2EBE5FF521CB3D3800EF9107 /* Build configuration list for PBXNativeTarget "MultiPattern" */;
 			buildPhases = (
+				06A2AD8BABF5CCB1593413FB /* [CP] Check Pods Manifest.lock */,
 				2EBE5FD421CB3D3500EF9107 /* Sources */,
 				2EBE5FD521CB3D3500EF9107 /* Frameworks */,
 				2EBE5FD621CB3D3500EF9107 /* Resources */,
+				52DD4B484921EF01EB06C0C3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -194,6 +220,49 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		06A2AD8BABF5CCB1593413FB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MultiPattern-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		52DD4B484921EF01EB06C0C3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MultiPattern/Pods-MultiPattern-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MultiPattern/Pods-MultiPattern-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2EBE5FD421CB3D3500EF9107 /* Sources */ = {
@@ -362,14 +431,12 @@
 		};
 		2EBE5FF621CB3D3800EF9107 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3939877620191ADBAD79C4D0 /* Pods-MultiPattern.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MultiPattern/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Chris.MultiPattern;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -379,14 +446,12 @@
 		};
 		2EBE5FF721CB3D3800EF9107 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73346D531F98196B52773E7A /* Pods-MultiPattern.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MultiPattern/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Chris.MultiPattern;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -401,11 +466,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MultiPatternTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Chris.MultiPatternTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -421,11 +482,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MultiPatternTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Chris.MultiPatternTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

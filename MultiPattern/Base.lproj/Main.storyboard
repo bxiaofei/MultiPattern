@@ -106,6 +106,28 @@
                                     <action selector="mvvmCommit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Frk-ge-yE8"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pKx-oY-g6q">
+                                <rect key="frame" x="16" y="272" width="254" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="mvc+viewState" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zd9-IY-8HQ">
+                                <rect key="frame" x="16" y="252" width="118" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rem-GK-Gft">
+                                <rect key="frame" x="285" y="272" width="74" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Commit"/>
+                                <connections>
+                                    <action selector="mvcsCommit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="19A-VL-vF4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -113,13 +135,14 @@
                     <connections>
                         <outlet property="minimalTextField" destination="az5-lE-ZW7" id="5A0-gB-ZbM"/>
                         <outlet property="mvcTextField" destination="bR2-5s-0Eb" id="HDj-eX-MAh"/>
+                        <outlet property="mvcvsTextField" destination="pKx-oY-g6q" id="2nQ-XQ-H8x"/>
                         <outlet property="mvpTextField" destination="805-xn-Bhj" id="tru-V6-r9m"/>
                         <outlet property="mvvmTextField" destination="eOn-eQ-QBd" id="Hcl-Cg-FsN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-734" y="-143"/>
+            <point key="canvasLocation" x="-833" y="-197"/>
         </scene>
     </scenes>
 </document>
